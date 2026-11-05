@@ -1,0 +1,269 @@
+/* MERCADO PROZ - identidade visual compartilhada */
+:root {
+    --verde-900: #123c2b;
+    --verde-800: #185239;
+    --verde-600: #278451;
+    --verde-100: #e8f5ec;
+    --fundo: #f5f8f5;
+    --branco: #ffffff;
+    --texto: #24332a;
+    --texto-suave: #718078;
+    --borda: #e2eae4;
+    --sombra: 0 10px 30px rgba(18, 60, 43, .08);
+    --raio: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1 {
+    color: var(--verde-900);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+h2 {
+    color: var(--verde-900);
+    font-size: 1.45rem;
+}
+
+/* Cabeçalho das páginas */
+body > h1 {
+    margin: 0;
+    padding: 30px max(6%, calc((100% - 1160px) / 2));
+    color: var(--branco);
+    background: linear-gradient(120deg, var(--verde-900), var(--verde-600));
+    box-shadow: 0 4px 18px rgba(18, 60, 43, .15);
+}
+
+body > h1::before {
+    content: "🛒";
+    margin-right: 12px;
+}
+
+/* Catálogo - index */
+body:has(#lista-produtos) > h2,
+body:has(#lista-produtos) > h3 {
+    width: min(1160px, 88%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body:has(#lista-produtos) > h2 {
+    margin-top: 38px;
+    margin-bottom: 8px;
+}
+
+body:has(#lista-produtos) > h3 {
+    color: var(--texto-suave);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+#lista-produtos {
+    width: min(1160px, 88%);
+    margin: 0 auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+#lista-produtos article {
+    position: relative;
+    min-height: 170px;
+    padding: 24px;
+    overflow: hidden;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#lista-produtos article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 34px rgba(18, 60, 43, .13);
+}
+
+#lista-produtos article::before {
+    content: "PRODUTO";
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    color: var(--verde-800);
+    background: var(--verde-100);
+    border-radius: 30px;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .8px;
+}
+
+#lista-produtos article h3 {
+    margin-bottom: 14px;
+    color: var(--verde-900);
+    font-size: 1.15rem;
+}
+
+#lista-produtos article p {
+    margin: 7px 0;
+    color: var(--texto-suave);
+    font-size: .94rem;
+}
+
+#lista-produtos article p:nth-of-type(1) {
+    color: var(--verde-600);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* Administração */
+body:has(#formCadastro) {
+    padding-bottom: 50px;
+}
+
+body:has(#formCadastro) > h1 {
+    margin-bottom: 38px;
+}
+
+#formCadastro {
+    width: min(560px, 90%);
+    margin: 0 auto 34px;
+    padding: 30px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+#formCadastro > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 19px;
+}
+
+#formCadastro label {
+    color: var(--verde-900);
+    font-size: .92rem;
+    font-weight: 700;
+}
+
+#formCadastro input {
+    width: 100%;
+    padding: 13px 15px;
+    color: var(--texto);
+    background: #fbfdfb;
+    border: 1px solid #d8e3da;
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+#formCadastro input:focus {
+    border-color: var(--verde-600);
+    box-shadow: 0 0 0 4px rgba(39, 132, 81, .12);
+}
+
+button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: transform .15s, filter .15s;
+}
+
+button:hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}
+
+#formCadastro button[type="reset"] {
+    color: var(--verde-800);
+    background: var(--verde-100);
+    margin-right: 8px;
+}
+
+#formCadastro button[type="submit"] {
+    color: var(--branco);
+    background: var(--verde-600);
+}
+
+#itens {
+    width: min(760px, 90%);
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+#itens li {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 16px 18px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(18, 60, 43, .05);
+    font-weight: 600;
+}
+
+#itens li button {
+    padding: 8px 12px;
+    color: var(--verde-800);
+    background: var(--verde-100);
+    font-size: .85rem;
+}
+
+#itens li button:first-of-type {
+    margin-left: auto;
+    color: #a52d2d;
+    background: #fff0f0;
+}
+
+@media (max-width: 600px) {
+    body > h1 { padding: 24px 6%; }
+    #formCadastro { padding: 22px; }
+    #formCadastro button { margin-top: 7px; }
+    #itens li { align-items: flex-start; }
+    #itens li button:first-of-type { margin-left: 0; }
+}
+/* Navegação entre páginas */
+.navegacao {
+    width: min(1160px, 88%);
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navegacao a {
+    display: inline-block;
+    padding: 12px 22px;
+    color: white;
+    background: #278451;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.navegacao a:hover {
+    background: #185239;
+    transform: translateY(-2px);
+}

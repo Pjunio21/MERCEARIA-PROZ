@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Proz | Administração</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Administrar Produtos</h1>
+    <nav class="navegacao">
+    <a href="index.html">Voltar à Loja</a>
+</nav>
+    <form id="formCadastro">
+        <div>
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" required>
+        </div>
+        <div>
+            <label for="preco">Preco do Produto</label>
+            <input type="text" id="preco" required>
+        </div>
+        <div>
+            <label for="categoria">Categoria do Produto</label>
+            <input type="text" id="categoria" required>
+        </div>
+        <button type="reset">Limpar</button>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <table>
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody id="itens">
+    </tbody>
+</table>
+
+    <script src="assets/js/scriptAdmin.js"></script>
+</body>
+</html>
